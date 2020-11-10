@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.springblade.modules.bdface.mapper.CameraRecordMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="cameraRecordResultMap" type="org.springblade.modules.bdface.entity.CameraRecord">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="camera_credentials_id" property="cameraCredentialsId"/>
+        <result column="pic_all_url" property="picAllUrl"/>
+        <result column="pic_part_url" property="picPartUrl"/>
+        <result column="create_time" property="createTime"/>
+        <result column="camera_name" property="cameraName"/>
+        <result column="region" property="region"/>
+    </resultMap>
+
+
+    <select id="selectCameraRecordPage" resultMap="cameraRecordResultMap">
+        select * from extend_iot_camera_record where is_deleted = 0
+    </select>
+
+</mapper>

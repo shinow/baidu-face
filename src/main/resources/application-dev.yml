@@ -1,0 +1,41 @@
+spring:
+  redis:
+    host: dev.redis.aideeper.com
+    port: 6379
+    password: jackoak123456
+    database: 12
+    ssl: false
+  datasource:
+    url: jdbc:postgresql://dev.postgress.aideeper.com:5432/aideeper-baide-face
+    username: postgres
+    password: core_team!A123
+
+
+
+  #resources:
+    #static-locations: classpath:templates/,classpath:static/
+
+  #mvc:
+    #view:
+      #prefix: /
+      #suffix: .html
+    #static-path-pattern: /static/**
+
+
+
+
+bd-face:
+  #人脸阈值
+  threshold: 85
+  # 出现在镜头中的 间隔,单位秒
+  recinterval: 5000
+  savefacepic: true
+
+device:
+  heart:
+    device_switch: off
+    callBackUrl: http://websocket.aideeper.com:8704/transitrecord/device-event
+    websocketServerUrl: ws://websocket.aideeper.com:8088/server?SerialNo=3228ab3a28ce4f54a7b037156102142c&DevName=Cam1
+  email_port: 587
+
+
